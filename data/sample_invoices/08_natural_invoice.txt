@@ -1,0 +1,16 @@
+FICTIONAL SAMPLE — NOT A REAL INVOICE
+
+Maple Creek Maintenance
+Invoice MC-2087
+Issued October 5, 2026
+Payment due November 4, 2026
+
+Bill to: Cedarline Operations
+
+Description             Qty    Unit price    Amount
+Equipment inspection      2      85.00       170.00
+Replacement filters       3      20.00        60.00
+
+Subtotal                                     230.00
+Sales tax                                     20.70
+Amount due                                   250.70 USD

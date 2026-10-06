@@ -1,0 +1,11 @@
+SYNTHETIC DEMO INVOICE
+Vendor: Cedarline Supplies
+Invoice Number:
+Invoice Date: 2026-10-01
+Due Date: 2026-10-31
+Currency: USD
+Item: Filter packs | 2 | 25.00 | 50.00
+Item: Service materials | 1 | 50.00 | 50.00
+Subtotal: 100.00
+Tax: 9.00
+Total: 109.00

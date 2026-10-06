@@ -1,0 +1,10 @@
+SYNTHETIC DEMO INVOICE
+Vendor: Cedarline Supplies
+Invoice Number: CS-1005
+Invoice Date: 2026-10-01
+Due Date: 2026-10-31
+Currency: USD
+Item: Equipment order | 1 | 12000.00 | 12000.00
+Subtotal: 12000.00
+Tax: 1080.00
+Total: 13080.00
