@@ -72,7 +72,7 @@ def main():
     export=sub.add_parser('export');export.add_argument('--out',type=Path,default=BASE/'data'/'approved_invoices.json')
     args=parser.parse_args()
     if args.command=='demo':
-        for file in sorted((BASE/'data'/'sample_invoices').glob('*.txt')):
+        for file in sorted((BASE/'data'/'sample_invoices').glob('0[1-6]_*.txt')):
             print(file.name,ingest(file.read_bytes(),file.name,args.db))
         print('Loaded synthetic samples. Next: python app.py serve')
     elif args.command=='ingest':print(json.dumps(ingest(args.file.read_bytes(),args.file.name,args.db,args.mode,args.model,args.threshold),indent=2))

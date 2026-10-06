@@ -1,5 +1,10 @@
 # AI Invoice Intelligence Agent
 
+## Dashboard preview
+
+![Local invoice review dashboard showing a verified synthetic invoice](docs/dashboard.png)
+
+
 A Hicks Analytics portfolio project that converts business documents into structured invoice candidates, checks financial rules, detects duplicates, and maintains a human review queue in SQLite.
 
 **Start with the demo below.** It works without Ollama, a paid API, or an API key. The demo parser is deterministic and accepts the supplied labeled format only. Switch to Ollama for actual local AI extraction from varied text, text-based PDFs, or images with a compatible vision model.
@@ -50,13 +55,13 @@ Use your existing Ollama installation and confirm the exact model tag with `olla
 
 ```powershell
 ollama list
-.\.venv\Scripts\python.exe app.py ingest data\sample_invoices\01_clean.txt --mode ollama --model qwen3:4b-instruct
+.\.venv\Scripts\python.exe app.py ingest data\sample_invoices\01_clean.txt --mode ollama --model qwen3:4b-instruct-2507-q4_K_M
 ```
 
 **If the same file is already in the demo database, it is reused without calling AI.** Compare modes in a separate database:
 
 ```powershell
-.\.venv\Scripts\python.exe app.py --db data\ai_comparison.sqlite3 ingest data\sample_invoices\01_clean.txt --mode ollama --model qwen3:4b-instruct
+.\.venv\Scripts\python.exe app.py --db data\ai_comparison.sqlite3 ingest data\sample_invoices\01_clean.txt --mode ollama --model qwen3:4b-instruct-2507-q4_K_M
 .\.venv\Scripts\python.exe app.py --db data\ai_comparison.sqlite3 serve --port 8767
 ```
 
@@ -151,3 +156,17 @@ The package is GitHub-ready; it has not been published to your account. From the
 ## Build verification
 
 See BUILD_VERIFICATION.md for the checks performed on the packaged version and what still needs local model verification.
+
+
+## Verified local results
+
+Tested on Windows with local Ollama and qwen3:4b-instruct-2507-q4_K_M.
+
+- All 21 automated tests pass.
+- Manually verified extraction from labeled text, natural-layout text, and a text-based PDF.
+- Confirmed review findings for incorrect totals, missing identifiers, duplicate invoices, large amounts, and unreadable totals.
+- Verified human approval and export of approved records.
+- Added current-date context to address a false date warning.
+
+These are synthetic sample checks, not a production accuracy benchmark.
+Image extraction with a vision model remains unverified.

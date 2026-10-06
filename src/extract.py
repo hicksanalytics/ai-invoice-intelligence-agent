@@ -67,7 +67,7 @@ def ollama_extract(data, suffix, model=None, endpoint=None):
     if suffix in ('.png','.jpg','.jpeg'):
         message['images']=[base64.b64encode(data).decode('ascii')]
     else: message['content']='INVOICE DOCUMENT\n'+source_text(data,suffix)+'\nEND DOCUMENT'
-    model=model or os.getenv('OLLAMA_MODEL','qwen3:4b-instruct')
+    model=model or os.getenv('OLLAMA_MODEL','qwen3:4b-instruct-2507-q4_K_M')
     payload={'model':model,'stream':False,'format':schema,'options':{'temperature':0},
              'messages':[{'role':'system','content':prompt},message]}
     request=Request(endpoint.rstrip('/')+'/api/chat',data=json.dumps(payload).encode(),headers={'Content-Type':'application/json'})
